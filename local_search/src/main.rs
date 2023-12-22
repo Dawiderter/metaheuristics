@@ -1,4 +1,4 @@
-use local_search::exp::{experiment_one, experiment_two};
+use local_search::exp::{experiment_one, experiment_two, experiment_three};
 
 pub fn main() {
     let names = [
@@ -10,6 +10,6 @@ pub fn main() {
     ];
 
     for (&name, &optimal) in names.iter().zip(optimal_lengths.iter()) {
-        experiment_two(name, optimal);
+        experiment_one(name, optimal);
     }   
 }

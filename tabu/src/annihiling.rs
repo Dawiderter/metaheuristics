@@ -1,5 +1,5 @@
-use crate::points::Points;
-use rand::{prelude::*, distributions::Uniform};
+use crate::{mst::measure_perm, points::Points};
+use rand::{distributions::Uniform, prelude::*};
 
 pub fn wrapped_dist(points: &Points, perm: &[usize], a: isize, b: isize) -> i32 {
     let n = perm.len() as isize;
@@ -31,74 +31,70 @@ pub fn invert(perm: &mut [usize], inv: (usize, usize)) {
 pub fn all_inv(n: usize) -> impl Iterator<Item = (usize, usize)> {
     (0..(n - 1))
         .flat_map(move |i| ((i + 1)..n).map(move |j| (i, j)))
+        .filter(move |inv| inv != &(0, n - 1))
 }
 
-pub fn local_search(points: &Points, start: &mut [usize]) -> u32 {
+pub fn annealing(
+    points: &Points,
+    start: &mut [usize],
+    start_temperature: f32,
+    cooling: f32,
+    epoch_samples: usize,
+    max_stagnation: usize,
+    max_epochs: usize,
+) {
     let x = start;
     let n = x.len();
+    let mut x_best = x.to_vec();
 
-    let mut count = 0;
+    let mut x_weight = measure_perm(points, x);
+    let mut x_best_weight = x_weight;
 
-    for _ in 0..100_000 {
-        let min_inv = all_inv(n)
-            .min_by_key(|&inv| inv_diff(points, x, inv))
-            .unwrap();
+    let mut temp = start_temperature;
+    let mut last_improvement = 0;
 
-        if inv_diff(points, x, min_inv) >= 0 {
+    let dist = Uniform::new(0, n);
+
+    for _ in 0..max_epochs {
+        for _ in 0..epoch_samples {
+            let y = gen_inv(&dist, n);
+            let diff = inv_diff(points, x, y);
+            if diff >= 0 {
+                let p = (-diff as f32 / temp).exp();
+                let rand = rand::random::<f32>();
+                if rand > p {
+                    continue;
+                }
+            }
+            invert(x, y);
+            x_weight = (x_weight as i32 + diff) as u32;
+
+            if x_weight < x_best_weight {
+                x_best.clone_from_slice(x);
+                x_best_weight = x_weight;
+                last_improvement = 0;
+            }
+        }
+        
+        temp *= cooling;
+        last_improvement += 1;
+
+        if last_improvement > max_stagnation {
             break;
-        } else {
-            count += 1;
-            invert(x, min_inv);
         }
     }
 
-    if count >= 100_000 {
-        println!("Too long loop")
-    }
-
-    count
+    x.clone_from_slice(&x_best);
 }
 
-pub fn gen_inv(dist: &Uniform<usize>) -> (usize, usize) {
+pub fn gen_inv(dist: &Uniform<usize>, n: usize) -> (usize, usize) {
     loop {
         let x = dist.sample(&mut thread_rng());
         let y = dist.sample(&mut thread_rng());
-        if x != y {
-            return (x,y);
+        if x != y && (x, y) != (0, n - 1) && (x, y) != (n - 1, 0) {
+            return (x.min(y), x.max(y));
         }
     }
-}
-
-pub fn local_random_search(points: &Points, start: &mut [usize]) -> u32 {
-    let x = start;
-    let n = x.len();
-
-    let mut count = 0;
-
-    let dist = Uniform::new(0,n);
-
-    for _ in 0..10_000 { 
-        let min_inv = (0..n)
-            .map(|_| {
-                let (x,y) = gen_inv(&dist);
-                (x.min(y), x.max(y))
-            })
-            .min_by_key(|&inv| inv_diff(points, x, inv))
-            .unwrap();
-
-        if inv_diff(points, x, min_inv) >= 0 {
-            break;
-        } else {
-            count += 1;
-            invert(x, min_inv);
-        }
-    }
-
-    if count >= 10_000 {
-        println!("Too long loop")
-    }
-
-    count
 }
 
 #[cfg(test)]
@@ -150,15 +146,14 @@ mod tests {
     fn xqf131_test() {
         let points = parse_problem_from_str(include_str!("./../../vlsi/xqf131.tsp")).unwrap();
 
-        let mst = mst(&points);
-        let mst_length = measure_mst(&mst);
-        let mut perm = dfs_cycle(&mst, 20);
+        let mut perm = (0..points.list.len()).collect::<Vec<_>>();
+        perm.shuffle(&mut thread_rng());
         let length = measure_perm(&points, &perm);
 
-        let count = local_search(&points, &mut perm);
+        annealing(&points, &mut perm, 200.0, 0.98, 1000, 100, usize::MAX);
 
         let opt_length = measure_perm(&points, &perm);
 
-        dbg!(mst_length, length, opt_length, count);
+        dbg!(length, opt_length);
     }
 }

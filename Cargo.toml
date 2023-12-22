@@ -1,2 +1,2 @@
 [workspace]
-members = ["tsp", "local_search"]
+members = ["tsp", "local_search", "tabu"]

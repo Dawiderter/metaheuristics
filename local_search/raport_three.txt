@@ -1,0 +1,104 @@
+==================
+Beginning test xqf131                                                                                                                                          
+Progress: ████████████████████     131/131    
+Elapsed time: [00:00:00]                                                                                                                                       Optimal length: 564
+Minimal found length: 831
+Avg improvements: 111.938934
+Avg length: 1051.4962
+==================
+Beginning test xqg237                                                                                                                                          
+Progress: ████████████████████     237/237    
+Elapsed time: [00:00:00]                                                                                                                                       Optimal length: 1019
+Minimal found length: 1721
+Avg improvements: 223.56963
+Avg length: 2109.924
+==================
+Beginning test pma343                                                                                                                                          
+Progress: ████████████████████     343/343    
+Elapsed time: [00:00:00]                                                                                                                                       Optimal length: 1368
+Minimal found length: 2293
+Avg improvements: 365.73178
+Avg length: 2845.2478
+==================
+Beginning test pka379                                                                                                                                          
+Progress: ████████████████████     379/379    
+Elapsed time: [00:00:00]                                                                                                                                       Optimal length: 1332
+Minimal found length: 2257
+Avg improvements: 406.12402
+Avg length: 2794.5962
+==================
+Beginning test bcl380                                                                                                                                          
+Progress: ████████████████████     380/380    
+Elapsed time: [00:00:00]                                                                                                                                       Optimal length: 1621
+Minimal found length: 3111
+Avg improvements: 376.16843
+Avg length: 3813.8105
+==================
+Beginning test pbl395                                                                                                                                          
+Progress: ████████████████████     395/395    
+Elapsed time: [00:00:00]                                                                                                                                       Optimal length: 1281
+Minimal found length: 2339
+Avg improvements: 384.4152
+Avg length: 2979.881
+==================
+Beginning test pbk411                                                                                                                                          
+Progress: ████████████████████     411/411    
+Elapsed time: [00:00:00]                                                                                                                                       Optimal length: 1343
+Minimal found length: 2581
+Avg improvements: 407.04135
+Avg length: 3144.7202
+==================
+Beginning test pbn423                                                                                                                                          
+Progress: ████████████████████     423/423    
+Elapsed time: [00:00:00]                                                                                                                                       Optimal length: 1365
+Minimal found length: 2538
+Avg improvements: 420.23642
+Avg length: 3186.1868
+==================
+Beginning test pbm436                                                                                                                                          
+Progress: ████████████████████     436/436    
+Elapsed time: [00:00:00]                                                                                                                                       Optimal length: 1443
+Minimal found length: 2702
+Avg improvements: 432.97018
+Avg length: 3372.5664
+==================
+Beginning test xql662                                                                                                                                          
+Progress: ████████████████████     662/662    
+Elapsed time: [00:00:03]                                                                                                                                       Optimal length: 2513
+Minimal found length: 4781
+Avg improvements: 694.4864
+Avg length: 6060.391
+==================
+Beginning test xit1083                                                                                                                                         
+Progress: ████████████████████    1083/1083   
+Elapsed time: [00:00:16]                                                                                                                                       Optimal length: 3558
+Minimal found length: 7498
+Avg improvements: 1202.65
+Avg length: 9148.591
+==================
+Beginning test icw1483                                                                                                                                         
+Progress: ████████████████████    1483/1483   
+Elapsed time: [00:00:45]                                                                                                                                       Optimal length: 4416
+Minimal found length: 9205
+Avg improvements: 1693.1443
+Avg length: 11452.404
+==================
+Beginning test djc1785                                                                                                                                         
+Progress: ████████████████████    1785/1785   
+Elapsed time: [00:01:15]                                                                                                                                       Optimal length: 6115
+Minimal found length: 12697
+Avg improvements: 2060.7603
+Avg length: 15579.749
+==================
+Beginning test dcb2086                                                                                                                                         
+Progress: ████████████████████    2086/2086   
+Elapsed time: [00:02:04]                                                                                                                                       Optimal length: 6600
+Minimal found length: 14772
+Avg improvements: 2454.816
+Avg length: 17816.1
+==================
+Beginning test pds2566                                                                                                                                         
+Progress: ████████████████████    2566/2566   
+Elapsed time: [00:03:58]                                                                                                                                       Minimal found length: 17350
+Avg improvements: 3056.8308
+Avg length: 21327.93

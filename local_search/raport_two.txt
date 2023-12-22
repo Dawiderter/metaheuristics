@@ -1,0 +1,119 @@
+==================
+Beginning test xqf131
+Progress: ████████████████████     131/131
+Elapsed time: [00:00:01]
+Optimal length: 564
+Minimal found length: 572
+Avg improvements: 132.92366
+Avg length: 611.8397
+==================
+Beginning test xqg237
+Progress: ████████████████████     237/237
+Elapsed time: [00:00:12]
+Optimal length: 1019
+Minimal found length: 1066
+Avg improvements: 260.3713
+Avg length: 1116.8734
+==================
+Beginning test pma343
+Progress: ████████████████████     343/343
+Elapsed time: [00:00:58]
+Optimal length: 1368
+Minimal found length: 1427
+Avg improvements: 404.08453
+Avg length: 1482.4344
+==================
+Beginning test pka379
+Progress: ████████████████████     379/379
+Elapsed time: [00:01:25]
+Optimal length: 1332
+Minimal found length: 1398
+Avg improvements: 447.92877
+Avg length: 1446.5304
+==================
+Beginning test bcl380
+Progress: ████████████████████     380/380
+Elapsed time: [00:01:31]
+Optimal length: 1621
+Minimal found length: 1712
+Avg improvements: 448.47632
+Avg length: 1816.55
+==================
+Beginning test pbl395
+Progress: ████████████████████     395/395
+Elapsed time: [00:01:44]
+Optimal length: 1281
+Minimal found length: 1346
+Avg improvements: 459.17468
+Avg length: 1427.0684
+==================
+Beginning test pbk411
+Progress: ████████████████████     411/411
+Elapsed time: [00:02:02]
+Optimal length: 1343
+Minimal found length: 1416
+Avg improvements: 483.691
+Avg length: 1489.803
+==================
+Beginning test pbn423
+Progress: ████████████████████     423/423
+Elapsed time: [00:02:17]
+Optimal length: 1365
+Minimal found length: 1454
+Avg improvements: 497.0331
+Avg length: 1521.0048
+==================
+Beginning test pbm436
+Progress: ████████████████████     436/436
+Elapsed time: [00:02:37]
+Optimal length: 1443
+Minimal found length: 1532
+Avg improvements: 512.9289
+Avg length: 1609.6743
+==================
+Beginning test xql662
+Progress: ████████████████████     662/662
+Elapsed time: [00:14:09]
+Optimal length: 2513
+Minimal found length: 2701
+Avg improvements: 810.96826
+Avg length: 2814.8293
+==================
+Beginning test xit1083
+Progress: ████████████████████     100/100
+Elapsed time: [00:09:58]
+Optimal length: 3558
+Minimal found length: 3934
+Avg improvements: 1385.03
+Avg length: 4017.41
+==================
+Beginning test icw1483
+Progress: ████████████████████     100/100
+Elapsed time: [00:25:51]
+Optimal length: 4416
+Minimal found length: 4866
+Avg improvements: 1926.87
+Avg length: 4981.9
+==================
+Beginning test djc1785
+Progress: ████████████████████     100/100
+Elapsed time: [00:46:40]
+Optimal length: 6115
+Minimal found length: 6741
+Avg improvements: 2348.5
+Avg length: 6871.49
+==================
+Beginning test dcb2086
+Progress: ████████████████████     100/100
+Elapsed time: [01:14:36]
+Optimal length: 6600
+Minimal found length: 7344
+Avg improvements: 2794.36
+Avg length: 7472.49
+==================
+Beginning test pds2566
+Progress: ████████████████████     100/100
+Elapsed time: [02:21:16]
+Minimal found length: 8511
+Avg improvements: 3489.37
+Avg length: 8677.17
